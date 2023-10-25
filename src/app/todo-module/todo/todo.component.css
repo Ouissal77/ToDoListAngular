@@ -1,0 +1,40 @@
+@import "/node_modules/primeflex/primeflex.css";
+
+
+.todo{
+    margin: auto;
+    background-color: rgb(234, 251, 251);
+
+    width: 460px;
+}
+.addTask{
+    height: 35px;
+}
+
+.addBtn{
+   border: none;
+   border-radius: 15px;
+   font-size: 1.1rem;
+   width: 90px;
+   cursor: pointer;
+}
+.addBtn:hover{
+    background-color: rgb(180, 231, 231);
+}
+.separator{
+height: 1px;
+width: 100%;
+background-color: darkgray;
+}
+.deleteBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  p{
+    margin: 0;
+    padding: 0;
+  }
+
+ 

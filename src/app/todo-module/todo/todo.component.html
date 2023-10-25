@@ -1,0 +1,39 @@
+
+<div class="todo flex flex-column p-3 border-round-lg ">
+    
+    <h2 class="text-center">TO DO LIST</h2>
+
+    <div class="flex justify-content-between addTask ">
+        <input type="text" pInputText class="w-9" [(ngModel)]="todoValue" />
+        <button type="submit" class="bg-primary addBtn border-round-lg" (click)="addTask()"> Add </button>
+    </div>
+    
+    <div class="text-xl surface-300 mt-3 border-round-sm p-1">To do list</div>
+<div *ngFor="let todo of todoList; let i=index;">
+    <div class="flex align-items-center justify-content-between mt-3 mb-3 ml-2 mr-2" >
+        <div class="flex align-items-center ">
+            <p-checkbox value="New York" class="mr-2" [(ngModel)]="todo.value" (ngModelChange)="changeTodo(i)"></p-checkbox>
+            <p for="ny">{{todo.content}}</p>
+        </div>
+         <button class="deleteBtn" (click)="confirm2('todoList',i)"  ><i class="pi pi-trash deleteIcon" style="font-size: 1.4rem; color: rgb(204, 8, 73)"  ></i>       </button>
+     </div>
+    <div class="separator"></div>
+</div>
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+
+   
+        
+    <div class="text-xl surface-300 mt-3 border-round-sm p-1 " *ngIf="finishedList.length>0">Finished Tasks</div>
+    <div class="flex align-items-center justify-content-between mt-3 mb-3 ml-2 mr-2" *ngFor="let todo of finishedList; let i=index;">
+        <div class="flex align-items-center ">
+            <p-checkbox value="New York" class="mr-2" [(ngModel)]="todo.value" (ngModelChange)="changefinished(i)"></p-checkbox>
+            <p for="ny">{{todo.content}}</p>
+        </div>
+          <button class="deleteBtn" (click)="confirm2('finishedList',i)"  ><i class="pi pi-trash deleteIcon" style="font-size: 1.4rem; color: rgb(204, 8, 73)"  ></i>       </button>
+    </div>
+
+    
+</div>
+
+
